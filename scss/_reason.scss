@@ -58,9 +58,9 @@
                     @include transition(.3s);
                 }
                 &:hover{
-                    color:#3CC78F ;
+                    color:#e62a26 ;
                     &::before{
-                        background: #3CC78F;
+                        background: #e62a26;
                     }
                 }
             }
