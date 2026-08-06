@@ -1,0 +1,196 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 110px 0 90px;
+  background: var(--paper);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.heroCopy h1 {
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  margin: 18px 0 26px;
+}
+
+.heroCopy h1 em {
+  color: var(--red);
+  font-style: italic;
+}
+
+.heroCopy p {
+  font-size: 18px;
+  color: var(--ink-soft);
+  max-width: 480px;
+  margin-bottom: 36px;
+}
+
+.heroActions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.heroMark {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroMark svg {
+  width: 100%;
+  height: auto;
+  max-width: 420px;
+}
+
+.heroStats {
+  display: flex;
+  gap: 40px;
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+
+.heroStat strong {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  display: block;
+  color: var(--ink);
+}
+
+.heroStat span {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+}
+
+/* What we do */
+.workGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.workCard {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 40px;
+  position: relative;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.workCard:hover {
+  border-color: var(--red);
+  transform: translateY(-4px);
+}
+
+.workIndex {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--red);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.workCard h3 {
+  font-size: 1.6rem;
+  margin-bottom: 14px;
+}
+
+.workCard p {
+  color: var(--ink-soft);
+  font-size: 15.5px;
+  line-height: 1.7;
+}
+
+/* Mission band */
+.missionBand {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 100px 0;
+  position: relative;
+}
+
+.missionBand :global(.eyebrow) {
+  color: #ff6b76;
+}
+
+.missionBand :global(.eyebrow)::before {
+  background: #ff6b76;
+}
+
+.missionQuote {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  line-height: 1.35;
+  max-width: 880px;
+  margin-top: 24px;
+}
+
+.missionQuote em {
+  color: var(--red);
+  font-style: italic;
+}
+
+/* Causes preview */
+.causesHead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.causesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+/* CTA band */
+.ctaBand {
+  background: var(--red);
+  color: var(--paper);
+  padding: 90px 0;
+  text-align: center;
+}
+
+.ctaBand :global(.eyebrow) {
+  color: rgba(250, 248, 246, 0.85);
+  justify-content: center;
+}
+
+.ctaBand :global(.eyebrow)::before {
+  background: rgba(250, 248, 246, 0.85);
+}
+
+.ctaBand h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 18px 0 34px;
+}
+
+.ctaActions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .heroGrid { grid-template-columns: 1fr; }
+  .heroMark { order: -1; max-width: 260px; margin: 0 auto; }
+  .workGrid { grid-template-columns: 1fr; }
+  .causesGrid { grid-template-columns: 1fr; }
+  .heroStats { gap: 24px; flex-wrap: wrap; }
+}

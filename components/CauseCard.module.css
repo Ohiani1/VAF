@@ -1,0 +1,68 @@
+.card {
+  display: block;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 32px;
+  position: relative;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--red);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px rgba(23, 17, 15, 0.08);
+}
+
+.pct {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--red);
+  background: var(--red-tint);
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 18px;
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--ink-soft);
+  font-size: 14.5px;
+  line-height: 1.65;
+  margin-bottom: 22px;
+}
+
+.progressRow {
+  margin-bottom: 14px;
+}
+
+.figures {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  margin-bottom: 20px;
+}
+
+.figures strong {
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+
+.link {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.card:hover .link {
+  color: var(--red);
+}

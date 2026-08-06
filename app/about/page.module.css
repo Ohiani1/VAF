@@ -1,0 +1,76 @@
+.hero {
+  padding: 90px 0 60px;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  margin: 16px 0 20px;
+  max-width: 780px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: var(--ink-soft);
+  max-width: 620px;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.storyGrid h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.storyBody p {
+  color: var(--ink-soft);
+  font-size: 16.5px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.valueCard {
+  border-top: 3px solid var(--red);
+  padding-top: 20px;
+}
+
+.valueCard h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.valueCard p {
+  color: var(--ink-soft);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+.markStrip {
+  background: var(--paper-dim);
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.markStrip svg {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+}
+
+@media (max-width: 860px) {
+  .storyGrid { grid-template-columns: 1fr; gap: 32px; }
+  .valuesGrid { grid-template-columns: 1fr; }
+}

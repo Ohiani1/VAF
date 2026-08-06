@@ -1,23 +1,19 @@
 {
-  "name": "vaf",
+  "name": "vaf-react",
   "version": "1.0.0",
-  "description": "",
-  "homepage": "https://github.com/Ohiani1/VAF#readme",
-  "bugs": {
-    "url": "https://github.com/Ohiani1/VAF/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Ohiani1/VAF.git"
-  },
-  "license": "ISC",
-  "author": "",
-  "type": "commonjs",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "vaf": "file:"
+    "next": "14.2.35",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@fontsource/fraunces": "^5.0.20",
+    "@fontsource/work-sans": "^5.0.18",
+    "@fontsource/space-mono": "^5.0.19"
   }
 }
