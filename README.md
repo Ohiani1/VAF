@@ -4,7 +4,7 @@ Next.js rebuild of the Violet AbdulKadir Foundation site. Static-exported
 (no server required), red/black/white theme built around the real VAF mark,
 deployable to GitHub Pages with your GoDaddy domain on top.
 
-## Run locally
+## Run locally on device
 
 ```bash
 npm install
