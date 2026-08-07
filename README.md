@@ -22,13 +22,17 @@ Node server needed to host it.
 
 ## What's real vs. placeholder
 
-- **Logo, colors**: real — pulled from your actual VAF mark (`public/images/vaf-logo.jpg`).
+- **Logo, colors**: real — the actual VAF mark (`public/images/vaf-trimmed.png`).
 - **Mission text, program descriptions, contact info**: real — pulled from your existing HTML.
-- **Cause photos**: NOT included. The old template's cause/about images were generic
-  stock photos unrelated to VAF (a stock doctor, an unrelated street photo), so I left
-  them out rather than reuse them. The design currently works without photos — drop
-  real photos into `public/images/causes/` and reference them in `data/causes.js`
-  whenever you have them (I can wire that up any time).
+- **Program photos**: real — pulled from your repo's `dev` branch (`img/carousel/`), which has
+  the actual event and program photos your `main` branch HTML referenced but didn't have
+  committed. Used in the hero, About gallery, and the three program cards.
+- **"Our Work" programs**: I replaced the old template's fundraising causes (Send Food /
+  Clothes / Water, with invented $5,000-of-$9,000 progress bars) with three real programs I
+  could actually verify from your photos: craft/economic-empowerment training, the E1X
+  Academy tech-skills partnership, and community feeding outreach. If you have real
+  fundraising targets for any of these, tell me the numbers and I'll bring back a progress
+  bar — I didn't want to publish made-up figures.
 - **Contact form**: the old form posted to `contact_process.php`. GitHub Pages can't run
   PHP, so the form now opens the visitor's email app pre-filled instead. To get quiet
   form submissions into an inbox, sign up for a free [Formspree](https://formspree.io)

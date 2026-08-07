@@ -38,8 +38,9 @@
 }
 
 .brand img {
-  height: 52px;
+  height: 78px;
   width: auto;
+  border-radius: 10px;
 }
 
 .nav {
@@ -93,7 +94,7 @@
 }
 
 @media (max-width: 860px) {
-  .brand img { height: 42px; }
+  .brand img { height: 60px; border-radius: 8px; }
 
   .burger { display: flex; }
 

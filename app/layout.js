@@ -7,7 +7,7 @@ export const metadata = {
   description:
     "VAF empowers youths and women through education, economic opportunities, and specialised training to build a better standard of living.",
   icons: {
-    icon: "/favicon.ico",
+    icon:"/vaf_logo.jpg",
   },
 };
 

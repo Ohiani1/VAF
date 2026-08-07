@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={`wrap ${styles.grid}`}>
         <div className={styles.about}>
-          <img src="/images/vaf-logo.jpg" alt="Violet AbdulKadir Foundation" className={styles.logo} />
+          <img src="/images/vaf-trimmed-transparent.png" alt="Violet AbdulKadir Foundation" className={styles.logo} />
           <p>
             Join us on our journey to create a world where youths and women
             have easy access to economic opportunities.

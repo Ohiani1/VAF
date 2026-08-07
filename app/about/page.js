@@ -1,5 +1,4 @@
 import styles from "./page.module.css";
-import ReachMark from "../../components/ReachMark";
 
 export const metadata = {
   title: "About | Violet AbdulKadir Foundation",
@@ -57,13 +56,16 @@ export default function About() {
         </div>
       </section>
 
-      <div className={styles.markStrip}>
-        <ReachMark />
+      <div className={styles.gallery}>
+        <img src="/images/carousel/vaf1.jpeg" alt="Women showcasing bags made through VAF's craft training program" />
+        <img src="/images/carousel/vaf7.jpeg" alt="VAF volunteers at a community feeding event" />
+        <img src="/images/carousel/vaf6.jpeg" alt="VAF program partnership handover" />
+        <img src="/images/carousel/vaf12.jpeg" alt="VAF team distributing relief packs from a van" />
       </div>
 
       <section className="section">
         <div className="wrap">
-          <span className="eyebrow">What we do</span>
+          {/* <span className="eyebrow">What we do</span>
           <div className={styles.storyGrid} style={{ marginTop: 32 }}>
             <div>
               <h2>Empower Women</h2>
@@ -98,7 +100,7 @@ export default function About() {
                 exposure to real economic opportunity.
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </>

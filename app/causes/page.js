@@ -12,10 +12,10 @@ export default function Causes() {
       <section className={styles.hero}>
         <div className="wrap">
           <span className="eyebrow">Our work</span>
-          <h1>Every fund here is a person, not a percentage.</h1>
+          <h1>Real programs, running in real neighbourhoods.</h1>
           <p>
-            These are the causes we&apos;re actively raising for right now.
-            Progress is tracked openly — here&apos;s exactly where things stand.
+            From craft training to tech education to emergency relief — here&apos;s
+            what VAF is actively doing across Lagos right now.
           </p>
         </div>
       </section>

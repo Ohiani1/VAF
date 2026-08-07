@@ -82,13 +82,13 @@ export default function Contact() {
               Send message
             </button>
 
-            <p className={styles.note}>
+            {/* <p className={styles.note}>
               This opens your email app with the message pre-filled — the old
               site posted to a PHP script, which won&apos;t run on GitHub
               Pages. Swap this for a Formspree or Netlify Forms endpoint
               whenever you want submissions to land silently in an inbox
               without opening mail apps.
-            </p>
+            </p> */}
           </form>
         </div>
       </section>

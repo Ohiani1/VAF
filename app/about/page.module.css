@@ -57,20 +57,20 @@
   line-height: 1.7;
 }
 
-.markStrip {
-  background: var(--paper-dim);
-  padding: 60px 0;
-  display: flex;
-  justify-content: center;
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
 }
 
-.markStrip svg {
+.gallery img {
   width: 100%;
-  max-width: 320px;
-  height: auto;
+  height: 600px;
+  object-fit: cover;
 }
 
 @media (max-width: 860px) {
   .storyGrid { grid-template-columns: 1fr; gap: 32px; }
   .valuesGrid { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
 }

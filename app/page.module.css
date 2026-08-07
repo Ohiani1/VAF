@@ -35,17 +35,29 @@
   flex-wrap: wrap;
 }
 
-.heroMark {
+.heroPhoto {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border: 6px solid var(--paper);
+  box-shadow: 0 24px 60px rgba(23, 17, 15, 0.18);
 }
 
-.heroMark svg {
+.heroPhoto::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--red);
+  border-radius: 2px;
+  margin: 14px;
+  pointer-events: none;
+}
+
+.heroPhoto img {
   width: 100%;
-  height: auto;
-  max-width: 420px;
+  height: 100%;
+  object-fit: cover;
 }
 
 .heroStats {
@@ -118,6 +130,24 @@
   color: var(--paper);
   padding: 100px 0;
   position: relative;
+  overflow: hidden;
+}
+
+.missionMark {
+  position: absolute;
+  right: -30px;
+  bottom: -20px;
+  width: 260px;
+  opacity: 0.14;
+  pointer-events: none;
+}
+
+.missionMark svg path {
+  stroke: var(--paper) !important;
+}
+
+.missionMark svg circle {
+  fill: var(--paper) !important;
 }
 
 .missionBand :global(.eyebrow) {
@@ -189,7 +219,7 @@
 
 @media (max-width: 900px) {
   .heroGrid { grid-template-columns: 1fr; }
-  .heroMark { order: -1; max-width: 260px; margin: 0 auto; }
+  .heroPhoto { order: -1; max-width: 420px; margin: 0 auto; aspect-ratio: 4/3; }
   .workGrid { grid-template-columns: 1fr; }
   .causesGrid { grid-template-columns: 1fr; }
   .heroStats { gap: 24px; flex-wrap: wrap; }

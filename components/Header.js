@@ -25,7 +25,7 @@ export default function Header() {
       </div>
       <div className={`wrap ${styles.mainBar}`}>
         <Link href="/" className={styles.brand} onClick={() => setOpen(false)}>
-          <img src="/images/vaf-logo.jpg" alt="Violet AbdulKadir Foundation" />
+          <img src="/images/vaf-trimmed.png" alt="Violet AbdulKadir Foundation" />
         </Link>
 
         <nav className={styles.nav} data-open={open}>
@@ -34,9 +34,9 @@ export default function Header() {
               {l.label}
             </Link>
           ))}
-          <Link href="/contact/" className={`btn btn-primary ${styles.cta}`} onClick={() => setOpen(false)}>
+          {/* <Link href="/contact/" className={`btn btn-primary ${styles.cta}`} onClick={() => setOpen(false)}>
             Donate
-          </Link>
+          </Link> */}
         </nav>
 
         <button

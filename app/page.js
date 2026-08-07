@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
-import ReachMark from "../components/ReachMark";
 import CauseCard from "../components/CauseCard";
+import ReachMark from "../components/ReachMark";
+import HeroCarousel from "../components/HeroCarousel";
 import { causes } from "../data/causes";
 
 export default function Home() {
@@ -39,13 +40,13 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={styles.heroMark}>
-            <ReachMark />
+          <div className={styles.heroPhoto}>
+            <HeroCarousel />
           </div>
         </div>
       </section>
 
-      <section className="section">
+      {/* <section className="section">
         <div className="wrap">
           <span className="eyebrow">What we do</span>
           <div className={styles.workGrid}>
@@ -69,6 +70,26 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section> */}
+
+      <section className="section">
+        <div className="wrap">
+          <div className={styles.causesHead}>
+            <div>
+              <span className="eyebrow">In the field</span>
+              <h2 style={{ marginTop: 14, fontSize: "2.2rem" }}>
+                What we&apos;re working on right now
+              </h2>
+            </div>
+            <a href="/causes/" className="btn btn-ghost">View all programs</a>
+          </div>
+
+          <div className={styles.causesGrid}>
+            {causes.map((c) => (
+              <CauseCard key={c.slug} cause={c} />
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className={styles.missionBand}>
@@ -81,27 +102,10 @@ export default function Home() {
             full potential.
           </p>
         </div>
-      </section>
-
-      <section className="section">
-        <div className="wrap">
-          <div className={styles.causesHead}>
-            <div>
-              <span className="eyebrow">Where it goes</span>
-              <h2 style={{ marginTop: 14, fontSize: "2.2rem" }}>
-                Active causes right now
-              </h2>
-            </div>
-            <a href="/causes/" className="btn btn-ghost">View all causes</a>
-          </div>
-
-          <div className={styles.causesGrid}>
-            {causes.map((c) => (
-              <CauseCard key={c.slug} cause={c} />
-            ))}
-          </div>
+        <div className={styles.missionMark}>
+          <ReachMark />
         </div>
-      </section>
+      </section>      
 
       <section className={styles.ctaBand}>
         <div className="wrap">
@@ -109,10 +113,12 @@ export default function Home() {
           <h2>Your support reaches further than you think.</h2>
           <div className={styles.ctaActions}>
             <a href="/contact/" className="btn btn-dark">Get in touch</a>
-            <a href="/causes/" className="btn btn-ghost-light">Explore the causes</a>
+            <a href="/causes/" className="btn btn-ghost-light">Explore our work</a>
           </div>
         </div>
       </section>
+      
     </>
   );
 }
+
