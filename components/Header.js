@@ -20,7 +20,7 @@ export default function Header() {
         <div className={`wrap ${styles.topBarInner}`}>
           <span>+234 (080) 332-3339</span>
           <span className={styles.dot} />
-          <span>info@vaf.org</span>
+          <span>info@thevaf.com</span>
         </div>
       </div>
       <div className={`wrap ${styles.mainBar}`}>

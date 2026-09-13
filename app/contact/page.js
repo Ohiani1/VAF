@@ -21,7 +21,7 @@ export default function Contact() {
       `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
     );
     const subject = encodeURIComponent(form.subject || "Message from vaf.org");
-    window.location.href = `mailto:info@vaf.org?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@thevaf.com?subject=${subject}&body=${body}`;
   }
 
   return (
@@ -51,7 +51,7 @@ export default function Contact() {
               </div>
               <div className={styles.infoItem}>
                 <span>Email</span>
-                <strong>info@vaf.org</strong>
+                <strong>info@thevaf.com</strong>
               </div>
             </div>
           </div>

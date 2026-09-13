@@ -28,7 +28,7 @@ export default function Footer() {
           <ul className={styles.contactList}>
             <li>10 Akinsemoyin Street, Surulere, Lagos, Nigeria</li>
             <li>+234 (080) 332-3339</li>
-            <li>info@vaf.org</li>
+            <li>info@thevaf.com</li>
           </ul>
         </div>
       </div>
