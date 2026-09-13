@@ -3,6 +3,8 @@
 import { useState } from "react";
 import styles from "./page.module.css";
 
+const FORM_ENDPOINT = "https://formspree.io/f/mnpqkgkp";
+
 export default function Contact() {
   const [form, setForm] = useState({
     name: "",
@@ -10,18 +12,37 @@ export default function Contact() {
     subject: "",
     message: "",
   });
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
 
   function update(field) {
     return (e) => setForm((f) => ({ ...f, [field]: e.target.value }));
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
-    );
-    const subject = encodeURIComponent(form.subject || "Message from vaf.org");
-    window.location.href = `mailto:info@thevaf.com?subject=${subject}&body=${body}`;
+    setStatus("sending");
+
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          subject: form.subject || "Message from thevaf.com",
+          message: form.message,
+        }),
+      });
+
+      if (res.ok) {
+        setStatus("sent");
+        setForm({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -56,40 +77,48 @@ export default function Contact() {
             </div>
           </div>
 
-          <form className={styles.form} onSubmit={handleSubmit}>
-            <div className={styles.row2}>
-              <div className={styles.field}>
-                <label htmlFor="name">Name</label>
-                <input id="name" required value={form.name} onChange={update("name")} placeholder="Your name" />
+          {status === "sent" ? (
+            <div className={styles.successBox}>
+              <h3>Message sent</h3>
+              <p>Thanks for reaching out — we&apos;ll get back to you as soon as we can.</p>
+              <button className="btn btn-ghost" onClick={() => setStatus("idle")}>
+                Send another message
+              </button>
+            </div>
+          ) : (
+            <form className={styles.form} onSubmit={handleSubmit}>
+              <div className={styles.row2}>
+                <div className={styles.field}>
+                  <label htmlFor="name">Name</label>
+                  <input id="name" required value={form.name} onChange={update("name")} placeholder="Your name" />
+                </div>
+                <div className={styles.field}>
+                  <label htmlFor="email">Email</label>
+                  <input id="email" type="email" required value={form.email} onChange={update("email")} placeholder="you@example.com" />
+                </div>
               </div>
+
               <div className={styles.field}>
-                <label htmlFor="email">Email</label>
-                <input id="email" type="email" required value={form.email} onChange={update("email")} placeholder="you@example.com" />
+                <label htmlFor="subject">Subject</label>
+                <input id="subject" value={form.subject} onChange={update("subject")} placeholder="What's this about?" />
               </div>
-            </div>
 
-            <div className={styles.field}>
-              <label htmlFor="subject">Subject</label>
-              <input id="subject" value={form.subject} onChange={update("subject")} placeholder="What's this about?" />
-            </div>
+              <div className={styles.field}>
+                <label htmlFor="message">Message</label>
+                <textarea id="message" rows={6} required value={form.message} onChange={update("message")} placeholder="Tell us a bit more..." />
+              </div>
 
-            <div className={styles.field}>
-              <label htmlFor="message">Message</label>
-              <textarea id="message" rows={6} required value={form.message} onChange={update("message")} placeholder="Tell us a bit more..." />
-            </div>
+              <button type="submit" className="btn btn-primary" style={{ justifySelf: "start" }} disabled={status === "sending"}>
+                {status === "sending" ? "Sending..." : "Send message"}
+              </button>
 
-            <button type="submit" className="btn btn-primary" style={{ justifySelf: "start" }}>
-              Send message
-            </button>
-
-            {/* <p className={styles.note}>
-              This opens your email app with the message pre-filled — the old
-              site posted to a PHP script, which won&apos;t run on GitHub
-              Pages. Swap this for a Formspree or Netlify Forms endpoint
-              whenever you want submissions to land silently in an inbox
-              without opening mail apps.
-            </p> */}
-          </form>
+              {status === "error" && (
+                <p className={styles.errorNote}>
+                  Something went wrong sending that — please try again, or email us directly at info@thevaf.com.
+                </p>
+              )}
+            </form>
+          )}
         </div>
       </section>
     </>

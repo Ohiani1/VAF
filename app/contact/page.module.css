@@ -95,6 +95,41 @@
   line-height: 1.6;
 }
 
+/* Add these to app/contact/page.module.css */
+
+.successBox {
+  background: var(--paper-dim);
+  border-left: 3px solid var(--red);
+  border-radius: 4px;
+  padding: 36px 32px;
+}
+
+.successBox h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.successBox p {
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.errorNote {
+  font-size: 13.5px;
+  color: var(--red-deep);
+  background: var(--red-tint);
+  border-radius: 3px;
+  padding: 12px 14px;
+  line-height: 1.6;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 @media (max-width: 860px) {
   .grid { grid-template-columns: 1fr; gap: 40px; }
   .row2 { grid-template-columns: 1fr; }
