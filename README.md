@@ -72,3 +72,9 @@ public/images/         real logo + assets pulled from your repo
 
 To add a new cause, add an entry to `data/causes.js` — no other code changes needed,
 the list and detail pages both read from it automatically.
+
+## Email fowarding
+Used ImprovMX
+
+## Contact Form
+Used Formspree
